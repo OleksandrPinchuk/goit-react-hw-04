@@ -2,20 +2,21 @@ import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 const SearchBar = ({ onSubmit }) => {
-    const [query, setQuery] = useState('')
+    const [query, setQuery] = useState("");
     const notify = () => toast.error('Enter text to search for images');
 
     const handleChange = (e) => {
         setQuery(e.target.value)
     }
+    
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         if (query.trim() === "") {
             notify();
             return
         }
         onSubmit(query);
-        setQuery('');
+        setQuery("");
     }
     return (
         <>
