@@ -20,15 +20,13 @@ const SearchBar = ({ onSubmit }) => {
         setQuery("");
     }
     return (
-        <>
             <header className={css.header}>
-                <form onSubmit={handleSubmit}>
-                    <input type="text" autoComplete="off" autoFocus placeholder="Search images and photos" value={query} onChange={handleChange} />
-                    <button type="submit">Search</button>
-                    <Toaster />
+                <form onSubmit={handleSubmit} className={css.form}>
+                <input type="text" autoComplete="off" autoFocus placeholder="Search images and photos" value={query} onChange={handleChange} className={css.input} />
+                <button type="submit" className={css.button}>Search</button>
+                <Toaster />
                 </form>
             </header>
-        </>
     )
 }
 

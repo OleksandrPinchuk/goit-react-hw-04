@@ -1,4 +1,36 @@
 .header{
-    background-color:blue;
-    
+    background-color:#3f51b5;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.form{
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    height: 28px;
+    display: inline-block;
+    margin: 12px;
+    font: inherit;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 2px;
+}
+
+.button {
+    height: 28px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
 }

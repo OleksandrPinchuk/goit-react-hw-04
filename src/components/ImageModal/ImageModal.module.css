@@ -1,0 +1,17 @@
+.button {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    color: #0b486b;
+    background: #ffffff61;
+}
+
+.img {
+    max-height: 675px;
+    object-fit:contain;
+}
