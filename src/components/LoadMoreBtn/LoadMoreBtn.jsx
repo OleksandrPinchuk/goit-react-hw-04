@@ -1,4 +1,5 @@
-import css from './LoadMoreBtn.module.css' 
+import css from './LoadMoreBtn.module.css';
+
 const LoadMoreBtn = ({ onClick }) => {
     return (
         <div>

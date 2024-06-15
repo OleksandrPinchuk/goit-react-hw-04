@@ -16,14 +16,17 @@ function App() {
   const [error, setError] = useState();
   const [images, setImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [totalPages, setTotalPages] = useState();
   
   useEffect(() => {
     const fetchImages = async () => {
       try {
         setError(false);
         setLoading(true);
-        const data = await getImagesApi(query, page);
-        setImages((prev) => [...prev, ...data]);
+        const {results: images, totalPages } = await getImagesApi(query, page);
+        // setImages((prev) => [...prev, ...data]);
+        setImages(images);
+        setTotalPages(totalPages);
       } catch (error) {
         setError(true)
       } finally {
@@ -32,6 +35,7 @@ function App() {
     }
     query && fetchImages()
   }, [query, page]);
+  
 
   const onSubmit = async (newQuery) => {
 
@@ -52,14 +56,13 @@ function App() {
     setSelectedImage(null);
   }
   
-
   return (
     <div>
       <SearchBar onSubmit={onSubmit} />
       <ImageGallery images={images} onImageClick={onImageClick} />
       {loading && <Loader />}
-      {error && <ErrorMessage />}
-      {images.length > 0 && <LoadMoreBtn onClick={handleLoadMore} />}
+      {error &&  <ErrorMessage />}
+      {images.length > 0 && totalPages !== page && <LoadMoreBtn onClick={handleLoadMore} />}
       {selectedImage && <ImageModal image={selectedImage} onClose={closeModal} />}
     </div>
   )

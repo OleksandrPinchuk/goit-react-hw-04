@@ -19,6 +19,7 @@ const SearchBar = ({ onSubmit }) => {
         onSubmit(query);
         setQuery("");
     }
+    
     return (
             <header className={css.header}>
                 <form onSubmit={handleSubmit} className={css.form}>

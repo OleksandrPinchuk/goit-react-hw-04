@@ -1,6 +1,8 @@
+import css from './Error.Message.module.css'
+
 const ErrorMessage = () => {
     return (
-        <p><b>Oops some error!</b></p>
+        <p className={css.error}>An error occurred while loading</p>
     )
 }
 

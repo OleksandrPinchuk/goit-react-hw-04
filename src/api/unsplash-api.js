@@ -9,5 +9,5 @@ export const getImagesApi = async (query, page) => {
             params : {query, page, per_page:10},
             headers : {Authorization: `Client-ID ${ACCESS_KEY}`,},
     })
-    return data.results
+    return { results: data.results, totalPages: data.total_pages };
 }
